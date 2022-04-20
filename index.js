@@ -8,15 +8,9 @@ app.get('/',function(req,res){
 })
 app.use('/dest',router)
 
-// mongoose.connect('mongodb://localhost/nodemong', {useNewUrlParser: true});
-// mongoose.connection.once('open',function(){
-//     console.log('Database connected Successfully');
-// }).on('error',function(err){
-//     console.log('Error', err);
-// })
+require('dotenv').config();
 
-
-const url = `mongodb+srv://mansi:YnotFRP4rTZLuKdQ@cluster0.kn8a8.mongodb.net/djamon?retryWrites=true&w=majority`;
+const url = `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.kn8a8.mongodb.net/djamon?retryWrites=true&w=majority`;
 
 const connectionParams={
     useNewUrlParser: true,
